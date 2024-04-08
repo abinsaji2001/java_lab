@@ -1,0 +1,519 @@
+import java.util.*;
+public class overloading {
+    double a;
+ int s;
+double area()
+{
+Scanner sc1=new Scanner(System.in);
+System.out.println("Enter value of s: ");
+int s=sc1.nextInt();
+a=s*s;
+System.out.println("Area of square: "+a);
+return a;
+}
+double area(int r)
+{
+a=3.14*r*r;
+System.out.println("Area of circle: "+a);
+return a;
+}
+double area(int b,int h)
+{
+a=0.5*b*h;
+System.out.println("Area of triangle: "+a);
+return a;
+}
+double area(int h1,int b1, int b2)
+{
+a=h1*(b1+b2)/2;
+System.out.println("Area of trapezoid: "+a);
+return a;
+}
+public static void main(String[] args) {
+overloading obj=new overloading();
+Scanner sc=new Scanner(System.in);
+System.out.println("Abin Saji \n 23mca003 \n 06-April-2024");
+System.out.println("Enter value of r: ");
+int r=sc.nextInt();
+System.out.println("Enter value of b and h: ");
+int b=sc.nextInt();
+int h=sc.nextInt();
+System.out.println("Enter value of h1,b1 and b2: ");
+int h1=sc.nextInt();
+int b1=sc.nextInt();
+int b2=sc.nextInt();
+obj.area();
+obj.area(r);
+obj.area(b, h);
+obj.area(h1, b1, b2);
+}
+}
+
+
+
+
+2
+import java.util.Scanner;
+class Employee 
+{
+    int Empid;
+    String Name;
+    double Salary;
+    String Address;
+    Employee(int no, String na, double sal, String add) 
+    {
+        this.Empid = no;
+        this.Name = na;
+        this.Salary = sal;
+        this.Address = add;
+    }
+}
+public class Teacher extends Employee
+{
+    String dept;
+    String subject;
+    Teacher(int no, String na, double sal, String add, String dep, String sub)
+    {
+        super(no,na,sal,add);
+        this.dept= dep;
+        this.subject=sub;
+    }
+    
+     void display()
+     {
+            System.out.println("Employee id: "+Empid);
+            System.out.println("Name: "+Name);
+            System.out.println("Salary: "+Salary);
+            System.out.println("Address: "+Address);
+            System.out.println("Department: "+dept);
+            System.out.println("Subject: "+subject);
+     }
+    public static void main(String[] args) 
+    {
+        System.out.println("Abin Saji");
+        System.out.println("23MCA003");
+        System.out.println("06/April/24");
+            System.out.println("Enter the No. of Employee's");
+            Scanner sc1 = new Scanner(System.in);
+            int num = sc1.nextInt();
+            Teacher arr[]=new Teacher[num];
+            for(int i =0;i<num;i++)
+            {
+                Scanner sc =new Scanner(System.in);
+                System.out.println("\nEnter Employee id: ");
+                int Empid=sc.nextInt();
+                System.out.println("Enter Employee Name: ");
+                String Name=sc.next();
+                System.out.println("Enter Salary: ");
+                double Salary=sc.nextDouble();
+                System.out.println("Enter Address: ");
+                String Address=sc.next();
+                System.out.println("Enter department: ");
+                String dept=sc.next();
+                System.out.println("Enter Subject: ");
+                String subject=sc.next();
+                arr[i]=new Teacher(Empid,Name,Salary,Address,dept,subject);
+            }
+            System.out.println("\n********Informations of all the employee's************");
+            for(int i=0;i<num;i++)
+            {
+                int j=i+1;
+                System.out.println("\n"+j+").");
+                arr[i].display();        
+         }
+        sc1.close();
+     }
+}
+
+3.
+
+import java.util.Scanner;
+class Person {
+String name;
+String gender;
+String address;
+int age;
+public Person(String name, String gender, String address, int age) {
+this.name = name;
+this.gender = gender;
+this.address = address;
+this.age = age;
+}
+}
+class Employee extends Person {
+int empId;
+String companyName;
+String qualification;
+double salary;
+public Employee(String name, String gender, String address, int age, int empId, String
+companyName, String qualification, double salary) {
+super(name, gender, address, age);
+this.empId = empId;
+this.companyName = companyName;
+this.qualification = qualification;
+this.salary = salary;
+}
+}
+
+class Teacher extends Employee {
+
+String subject;
+String department;
+int teacherId;
+public Teacher(String name, String gender, String address, int age, int empId, String
+companyName, String qualification, double salary, String subject, String department, int
+teacherId) {
+super(name, gender, address, age, empId, companyName, qualification, salary);
+this.subject = subject;
+this.department = department;
+this.teacherId = teacherId;
+}
+public void displayDetails() {
+System.out.println("Name: " + name);
+System.out.println("Gender: " + gender);
+System.out.println("Address: " + address);
+System.out.println("Age: " + age);
+System.out.println("Employee ID: " + empId);
+System.out.println("Company Name: " + companyName);
+System.out.println("Qualification: " + qualification);
+System.out.println("Salary: " + salary);
+System.out.println("Subject: " + subject);
+System.out.println("Department: " + department);
+System.out.println("Teacher ID: " + teacherId);
+System.out.println("---------------------------------------");
+}
+}
+public class Inherit {
+public static void main(String[] args) {
+System.out.println("Name: Abin Saji\nRollno: 23mca003\nTitle: Inheritance\nDate: 06-04-2024\n");
+System.out.println();
+Scanner scanner = new Scanner(System.in);
+System.out.print("Enter the number of teachers: ");
+int N = scanner.nextInt(); // Number of teachers
+
+Teacher[] teachers = new Teacher[N];
+for (int i = 0; i < N; i++) {
+scanner.nextLine(); // Consume the newline character
+System.out.println("Enter details for Teacher " + (i + 1) + ":");
+System.out.print("Name: ");
+String teacherName = scanner.nextLine();
+System.out.print("Gender: ");
+String gender = scanner.nextLine();
+System.out.print("Address: ");
+String address = scanner.nextLine();
+System.out.print("Age: ");
+int age = scanner.nextInt();
+System.out.print("Employee ID: ");
+int empId = scanner.nextInt();
+scanner.nextLine(); // Consume the newline character
+System.out.print("Company Name: ");
+String companyName = scanner.nextLine();
+System.out.print("Qualification: ");
+String qualification = scanner.nextLine();
+System.out.print("Salary: ");
+double salary = scanner.nextDouble();
+scanner.nextLine(); // Consume the newline character
+System.out.print("Subject: ");
+String subject = scanner.nextLine();
+System.out.print("Department: ");
+String department = scanner.nextLine();
+System.out.print("Teacher ID: ");
+int teacherId = scanner.nextInt();
+teachers[i] = new Teacher(teacherName, gender, address, age, empId,
+companyName, qualification, salary, subject, department, teacherId);
+System.out.println();
+}
+System.out.println("-------------------------");
+System.out.println("Teacher Details:");
+System.out.println("-------------------------"); for
+(Teacher teacher : teachers) {
+teacher.displayDetails();
+}
+}
+}
+
+4.
+import java.util.Scanner;
+
+class Publisher {
+    String name;
+    Publisher(String name) {
+        this.name = name;
+    }}
+
+class Book extends Publisher {
+    String title;
+    String author;
+    Book(String title, String author, String publisher) {
+        super(publisher);
+        this.title = title;
+        this.author = author;
+    }
+    void display() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Publisher: " + name);
+    }}
+
+class Literature extends Book {
+    Literature(String title, String author, String publisher) {
+        super(title, author, publisher);
+    }}
+
+class Fiction extends Book {
+    Fiction(String title, String author, String publisher) {
+        super(title, author, publisher);
+    }}
+
+public class Books {
+    public static void main(String[] args) {
+        System.out.println("Name: Abin Saji\nRollno: 23mca003\nTitle: Book (Inheritance)\nDate: 06-04-2024\n");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("No of Literature books: ");
+        int numLiteratureBooks = scanner.nextInt();
+        scanner.nextLine(); 
+        System.out.print("No of Fiction books: ");
+        int numFictionBooks = scanner.nextInt();
+        scanner.nextLine(); 
+        Book[] literatureBooks = new Book[numLiteratureBooks];
+        Book[] fictionBooks = new Book[numFictionBooks];
+        for (int i = 0; i < numLiteratureBooks; i++) {
+            System.out.println("\nEnter details for Literature book " + (i + 1) + ":");
+            literatureBooks[i] = createBook(scanner, "Literature");
+        }
+        for (int i = 0; i < numFictionBooks; i++) {
+            System.out.println("\nEnter details for Fiction book " + (i + 1) + ":");
+            fictionBooks[i] = createBook(scanner, "Fiction");
+        }
+        System.out.println("\nLiterature Books:");
+        displayBooks(literatureBooks);
+        System.out.println("\nFiction Books:");
+        displayBooks(fictionBooks);
+        scanner.close();
+    }
+
+    private static Book createBook(Scanner scanner, String type) {
+        System.out.print("Enter the title of the book: ");
+        String title = scanner.nextLine();
+        System.out.print("Enter the author of the book: ");
+        String author = scanner.nextLine();
+        System.out.print("Enter the publisher of the book: ");
+        String publisher = scanner.nextLine();
+        if (type.equals("Literature")) {
+            return new Literature(title, author, publisher);
+        } else if (type.equals("Fiction")) {
+            return new Fiction(title, author, publisher);
+        } else {
+            return null;
+        }
+    }
+
+    private static void displayBooks(Book[] books) {
+        for (Book book : books) {
+            book.display();
+            System.out.println();
+        }
+    }
+}
+
+5.
+import java.util.Scanner;
+class sports{
+String sport;
+int Rating;
+sports(String spo, int ra){
+sport = spo;
+Rating = ra;
+}
+}
+class student extends sports{
+String Grade;
+double Overall_per;
+student(String spo, int ra,String gd, double per ){
+super(spo, ra);
+Grade = gd;
+Overall_per = per;
+}
+}
+public class result extends student {
+result(String spo, int ra,String gd, double per ){
+super(spo, ra, gd, per);
+}
+void display(){
+System.out.println("Sports Details of Student");
+System.out.println("Sport :"+sport);
+System.out.println("Rating :"+Rating);
+System.out.println("\nAcademic Details of Student");
+System.out.println("Academic Grade :"+Grade);
+System.out.println("Overall percentage :"+Overall_per);
+}
+public static void main(String[] args) {
+Scanner sc =new Scanner(System.in);
+System.out.println("Name: Abin Saji\nRollno: 23mca003\nTitle: Sports (Inheritance)\nDate: 08-04-2024\n");
+System.out.println();
+System.out.println("Enter the Sports Details of Student");
+System.out.println("Sport: ");
+String a =sc.next();
+System.out.println("Sport Rating out of 10: "); int
+b =sc.nextInt();
+System.out.println("\nEnter the Sports Details of Student");
+System.out.println("Academic Grade: ");
+String c =sc.next();
+System.out.println("Overall percentage: ");
+double d =sc.nextDouble();
+sc.close();
+result obj= new result(a,b,c,d);
+obj.display();
+}
+}
+
+6.
+import java.util.Scanner;
+
+interface Shape {
+double area();
+double perimeter();
+}
+
+class Circle implements Shape {
+private double radius;
+public Circle(double radius) {
+this.radius = radius;
+}
+public double area() {
+return Math.PI * radius * radius;
+}
+public double perimeter() {
+return 2 * Math.PI * radius;
+}
+}
+
+class Rectangle implements Shape {
+private double length;
+private double width;
+public Rectangle(double length, double width) {
+this.length = length;
+this.width = width;
+}
+public double area() {
+return length * width;
+}
+public double perimeter() {
+return 2 * (length + width);
+}
+}
+public class shape {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+System.out.println("Name: Abin Saji\nRollno: 23mca003\nTitle: Shape Calculator (Interface)\nDate: 08-04-2024\n");
+System.out.println();
+int choice;
+do {
+System.out.println("Menu:");
+System.out.println("1. Circle");
+System.out.println("2. Rectangle");
+System.out.println("3. Exit");
+System.out.print("Enter your choice: ");
+choice = scanner.nextInt();
+switch (choice) {
+case 1:
+System.out.print("Enter the radius of the circle: ");
+double radius = scanner.nextDouble();
+Circle circle = new Circle(radius);
+System.out.println("Area of the circle: " + circle.area());
+System.out.println("Perimeter of the circle: " + circle.perimeter());
+break;
+case 2:
+System.out.print("Enter the length of the rectangle: ");
+double length = scanner.nextDouble();
+System.out.print("Enter the width of the rectangle: ");
+double width = scanner.nextDouble();
+Rectangle rectangle = new Rectangle(length, width);
+System.out.println("Area of the rectangle: " + rectangle.area());
+System.out.println("Perimeter of the rectangle: " + rectangle.perimeter());
+break;
+
+case 3:
+System.out.println("Exit");
+break;
+default:
+System.out.println("Invalid choice! Please try again.");
+break;
+}
+System.out.println();
+} while (choice != 3);
+scanner.close();
+}
+}
+
+7.
+import java.util.Scanner;
+interface Bill {
+void calculate();
+}
+class Order implements Bill {
+private int orderNo;
+private String date;
+private int[] productId;
+private String[] name;
+private int[] quantity;
+private double[] unitPrice;
+public Order(int orderNo, String date, int[] productId, String[] name, int[] quantity,
+double[] unitPrice) {
+this.orderNo = orderNo;
+this.date = date;
+this.productId = productId;
+this.name = name;
+this.quantity = quantity;
+this.unitPrice = unitPrice;
+}
+public void calculate() {
+double netAmount = 0.0;
+System.out.println();
+System.out.println("Order No.: " + orderNo + "\tDate: " + date);
+System.out.println();
+System.out.println("Product Id\tName\t\tQuantity\tUnit Price\tTotal");
+System.out.println("---------------------------------------------------");
+for (int i = 0; i < productId.length; i++) {
+double total = quantity[i] * unitPrice[i];
+netAmount += total;
+System.out.printf("%d\t\t%s\t\t%d\t\t%.2f\t\t%.2f\n",
+productId[i], name[i], quantity[i], unitPrice[i], total);
+
+}
+System.out.println("---------------------------------------------------");
+System.out.printf("\t\t\t\t\tNet. Amount\t%.2f\n", netAmount); }
+}
+public class bill {
+public static void main(String[] args) {
+System.out.println("Name: Abin Saji\nRollno: 23mca003\nTitle: Bill Calculator (Interface)\nDate: 08-04-2024\n");
+System.out.println();
+Scanner scanner = new Scanner(System.in);
+System.out.print("Enter the order number: ");
+int orderNo = scanner.nextInt();
+System.out.print("Enter the date: ");
+String date = scanner.next();
+System.out.print("Enter the number of products: ");
+int numProducts = scanner.nextInt();
+int[] productId = new int[numProducts];
+String[] name = new String[numProducts];
+int[] quantity = new int[numProducts];
+double[] unitPrice = new double[numProducts];
+for (int i = 0; i < numProducts; i++) {
+System.out.println("Enter details for Product " + (i + 1));
+System.out.print("Product ID: ");
+productId[i] = scanner.nextInt();
+scanner.nextLine(); 
+System.out.print("Name: ");
+name[i] = scanner.nextLine();
+System.out.print("Quantity: ");
+quantity[i] = scanner.nextInt();
+System.out.print("Unit Price: ");
+unitPrice[i] = scanner.nextDouble();
+}
+Order order = new Order(orderNo, date, productId, name, quantity, unitPrice);
+order.calculate();
+scanner.close();
+}
+}
+
