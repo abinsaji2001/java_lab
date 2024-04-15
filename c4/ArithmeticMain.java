@@ -2,9 +2,10 @@ import arithmetic.ArithmeticOperations;
 import java.util.Scanner;
 public class ArithmeticMain {
 public static void main(String[] args) {
-System.out.println("Abin Saji");
-System.out.println("23MCA003");
-System.out.println("15/03/2024");
+System.out.println("Name: Ashish P S");
+System.out.println("Reg. No: SJC22MCA-2015");
+System.out.println("Date: 17/06/2023");
+System.out.println("Course code: 20MCA132");
 System.out.println();
 ArithmeticOperations operations = new ArithmeticOperations();
 Scanner scanner = new Scanner(System.in);
